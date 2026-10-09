@@ -2,8 +2,9 @@ import React, { Suspense } from 'react';
 import logo from '@/assets/logo-icon.png'
 import Image from 'next/image';
 import CurrentDate from './CurrentDate';
-const Navbar = () => {
-    
+import CategoryLinks from './CategoryLinks';
+
+const Navbar =async () => {
     return (
         <div className='bg-base-100 shadow-sm' >
     <div className="navbar flex justify-between items-center container mx-auto">
@@ -23,6 +24,9 @@ const Navbar = () => {
     <button className='btn bg-[#05893E] text-white'>সাইন আপ</button>
   </div>
 </div>
+ <Suspense fallback={<span>ক্যাটেগোরি লোড হচ্ছে...</span>}>
+  <CategoryLinks/>
+ </Suspense>
         </div>
     );
 };

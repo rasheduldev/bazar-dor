@@ -1,4 +1,3 @@
-
 import { connection } from "next/server";
 
 const CurrentDate = async() => {
