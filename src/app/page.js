@@ -1,3 +1,4 @@
+import Banner from "@/components/Banner";
 import ProductCard from "@/components/ProductCard";
 import baseUrl from "@/services/baseUrl";
 import Image from "next/image";
@@ -15,6 +16,7 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto">
+      <Banner></Banner>
       <p className="my-4 font-bold text-xl text-[#1D271F]">
   <span className="text-red-500">▲</span> আজ দাম বেড়েছে
    </p>
