@@ -16,10 +16,10 @@ const ProductSummary = ({ product }) => {
             : unit;
 
   return (
-    <div className="rounded-2xl border border-[#E1E9E1] bg-white p-5 sm:p-8">
+    <div className="rounded-2xl border border-[#E1E9E1] mt-5 bg-white p-5 sm:p-8">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
         <div className="flex items-center gap-4">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-[#F0F5F0] text-4xl">
+          <div className="flex h-20 w-20  items-center justify-center rounded-xl bg-[#F0F5F0] text-4xl">
             {image}
           </div>
           <div>
@@ -51,13 +51,8 @@ const ProductSummary = ({ product }) => {
             <p className="text-xs text-gray-500">
               টাকা / {unit === "kg" ? "কেজি" : unitName}
             </p>
-            <span
-              className={`mt-2 inline-block text-xs font-semibold ${
-                change?.dir === "up"
-                  ? "text-red-600"
-                  : change?.dir === "down"
-                    ? "text-green-600"
-                    : "text-gray-500"
+            <span className={`mt-2 inline-block text-xs font-semibold ${
+            change?.dir === "up" ? "text-red-600" : change?.dir === "down"? "text-green-600" : "text-gray-500"
               }`}
             >
               {change?.dir === "up" ? "▲" : change?.dir === "down" ? "▼" : "—"}{" "}

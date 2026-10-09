@@ -1,3 +1,4 @@
+import PriceSummary from '@/components/PriceSummary';
 import ProductSummary from '@/components/ProductSummary';
 import baseUrl from '@/services/baseUrl';
 import React from 'react';
@@ -12,6 +13,7 @@ const ProductDetailsPage = async({params}) => {
     return (
         <div className='container mx-auto'>
             <ProductSummary product={product}></ProductSummary>
+            <PriceSummary markets={product.markets} />
         </div>
     );
 };
