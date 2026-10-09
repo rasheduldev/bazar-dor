@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
-  const { nameBn, image, unit, today, change, slug } = product;
+  const { nameBn, image, unit, today, change, id } = product;
   return (
     <Link
-      href={`/product/${slug}`}
+      href={`/product/${id}`}
       className="block rounded-xl bg-base-100 px-5 py-6 transition hover:border-green-300"
     >
       <div className="flex items-center gap-3">
