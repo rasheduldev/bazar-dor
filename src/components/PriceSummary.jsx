@@ -1,3 +1,4 @@
+import MarketPrices from "./MarketPrices";
 
 const PriceSummary = ({ markets = [] }) => {
   const allMinPrices = markets.map((market) => market.min);
@@ -48,6 +49,7 @@ const PriceSummary = ({ markets = [] }) => {
           </div>
         ))}
       </div>
+      <MarketPrices markets={markets} />
     </section>
   );
 };

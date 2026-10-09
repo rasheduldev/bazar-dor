@@ -14,6 +14,7 @@ const ProductDetailsPage = async({params}) => {
         <div className='container mx-auto'>
             <ProductSummary product={product}></ProductSummary>
             <PriceSummary markets={product.markets} />
+            
         </div>
     );
 };

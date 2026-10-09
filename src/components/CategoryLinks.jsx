@@ -3,17 +3,11 @@ import Link from "next/link";
 
 const getCategories = async () => {
   const res = await fetch(`${baseUrl}/categories`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch categories");
-  }
-
-  return res.json();
+  const data = await res.json()
+  return data
 };
-
 const CategoryLinks = async () => {
   const categories = await getCategories();
-
   return (
     <div className="border-y border-gray-200 bg-base-100 shadow-sm">
       <div className="container mx-auto flex items-center gap-2 overflow-x-auto px-4 py-2">
