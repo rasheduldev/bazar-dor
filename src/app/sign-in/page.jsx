@@ -3,6 +3,8 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
+import { FaGoogle } from 'react-icons/fa';
+import { IoLogoGithub } from 'react-icons/io';
 
 const SignInPage = () => {
     const onSubmit = async(e)=>{
@@ -55,11 +57,11 @@ const SignInPage = () => {
   </div>
 
   <div className="flex gap-2">
-      <button onClick={handleGoogleSignIn} className="btn">
-          Google দিয়ে চালিয়ে যান
+      <button type="button" onClick={handleGoogleSignIn} className="btn flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
+          <FaGoogle className="shrink-0" /> Google দিয়ে চালিয়ে যান
       </button>
-      <button onClick={handleGithubSignIn} className="btn">
-          GitHub দিয়ে চালিয়ে যান
+      <button type="button" onClick={handleGithubSignIn} className="btn flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
+          <IoLogoGithub className="shrink-0" /> GitHub দিয়ে চালিয়ে যান
       </button>
   </div>
 

@@ -7,7 +7,7 @@ import UserInfo from './UserInfo';
 
 const Navbar =async () => {
     return (
-        <div className='bg-base-100 shadow-sm' >
+        <div className='bg-base-100 shadow-sm py-2' >
     <div className="navbar flex justify-between items-center container mx-auto">
   <div className="flex gap-2 items-center">
     <Image src={logo} alt='Navbar Logo' className='w-10 h-10 bg-[#05893E] p-2 rounded-md'></Image>
