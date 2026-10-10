@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const ProfilePage = () => {
     const {data:session} = authClient.useSession()
@@ -13,14 +14,27 @@ const ProfilePage = () => {
           const formData = new FormData(e.target)
           const newUserData = Object.fromEntries(formData.entries())
           
-          await authClient.updateUser({
+          const { data, error } = await authClient.updateUser({
             ...newUserData,
           })
+
+          if(data){
+            toast.success("প্রোফাইল সফলভাবে আপডেট হয়েছে!");
+          }
+          if(error){
+            toast.error(error.message || "প্রোফাইল আপডেট করতে সমস্যা হয়েছে!");
+          }
       }
 
       const handleSignOut = async()=>{
-              await authClient.signOut()
-          }
+        await authClient.signOut({
+            fetchOptions: {
+                onSuccess: () => {
+                    toast.success("সফলভাবে সাইন আউট করা হয়েছে!");
+                },
+            }
+        })
+    }
     return (
         <div className="container mx-auto flex flex-col justify-center items-center mt-5 space-y-4 max-w-2xl px-4">
             <div className="w-full text-start">

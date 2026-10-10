@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const UserInfo = () => {
     const {data:session} = authClient.useSession()
@@ -10,7 +11,13 @@ const UserInfo = () => {
     
 
     const handleSignOut = async()=>{
-        await authClient.signOut()
+        await authClient.signOut({
+            fetchOptions: {
+                onSuccess: () => {
+                    toast.success("সফলভাবে সাইন আউট করা হয়েছে!");
+                },
+            }
+        })
     }
     return (
         <div>
@@ -34,14 +41,16 @@ const UserInfo = () => {
                                 <p className="text-sm text-gray-500 truncate">{user.email}</p>
                             </li>
                             <li className="mt-1">
-                                <Link href="/profile" className="flex items-center gap-2 py-2 text-black hover:bg-gray-100 rounded-lg">
+                                <Link href={"/profile"} className="flex items-center gap-2 py-2 text-black hover:bg-gray-100 rounded-lg">
                                     <span>👤</span> আমার প্রোফাইল
                                 </Link>
                             </li>
                             <li>
+                                <Link href={"/"}>
                                 <button onClick={handleSignOut} className="flex items-center gap-2 py-2 text-red-500 hover:bg-red-50 rounded-lg text-left w-full">
                                     <span>↪</span> সাইন আউট
                                 </button>
+                                </Link>
                             </li>
                         </ul>
                     </div>

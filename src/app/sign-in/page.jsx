@@ -3,6 +3,7 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { IoLogoGithub } from 'react-icons/io';
 
@@ -16,10 +17,12 @@ const SignInPage = () => {
             callbackURL:"/"
            })
            if(data){
+            toast.success("সফলভাবে সাইন ইন হয়েছে!")
             console.log(data)
             redirect("/")
            }
            if(error){
+            toast.error(error.message || "সাইন ইন ব্যর্থ হয়েছে!")
             console.log(error)
            }
         }

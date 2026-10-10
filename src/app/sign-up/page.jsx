@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io";
 
@@ -13,13 +14,14 @@ const SignUpPage = () => {
        const user = Object.fromEntries(formData.entries())
        const {data, error} = await authClient.signUp.email({
         ...user,
-        callbackURL:"/"
+        callbackURL:"/sign-in"
        })
        if(data){
-        console.log(data)
-        redirect("/")
+        toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!")
+        redirect("/sign-in")
        }
        if(error){
+        toast.error(error.message || "অ্যাকাউন্ট তৈরি করতে সমস্যা হয়েছে!")
         console.log(error)
        }
     }
