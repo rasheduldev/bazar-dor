@@ -3,6 +3,7 @@ import logo from '@/assets/logo-icon.png'
 import Image from 'next/image';
 import CurrentDate from './CurrentDate';
 import CategoryLinks from './CategoryLinks';
+import UserInfo from './UserInfo';
 
 const Navbar =async () => {
     return (
@@ -19,10 +20,7 @@ const Navbar =async () => {
           </p>
     </div>
   </div>
-  <div className="flex gap-2">
-    <button className='btn'>সাইন ইন</button>
-    <button className='btn bg-[#05893E] text-white'>সাইন আপ</button>
-  </div>
+  <UserInfo></UserInfo>
 </div>
  <Suspense fallback={<span>ক্যাটেগোরি লোড হচ্ছে...</span>}>
   <CategoryLinks/>
