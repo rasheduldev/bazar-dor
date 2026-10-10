@@ -40,7 +40,7 @@ const SignUpPage = () => {
             <h2 className="font-bold text-xl text-[#1D271F]">অ্যাকাউন্ট তৈরি করুন</h2>
             <p className="text-sm mb-2 text-gray-500">বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।</p>
             <form onSubmit={onSubmit}>
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-md border p-4">
+              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-sm sm:max-w-md border p-4">
 
   <label className="label ">নাম</label>
   <input name="name" type="text" className="input w-full" placeholder="যেমন: রহিম উদ্দিন" />
@@ -51,7 +51,7 @@ const SignUpPage = () => {
   <label className="label">পাসওয়ার্ড</label>
   <input name="password" type="password" className="input w-full" placeholder="কমপক্ষে ৮ অক্ষর" />
 
-  <button type="submit" className="btn bg-[#05893E] text-white mt-4">অ্যাকাউন্ট তৈরি করুন</button>
+  <button type="submit" className="btn bg-[#05893E] text-white w-full mt-4">অ্যাকাউন্ট তৈরি করুন</button>
 <div className="flex items-center my-4">
       <div className="flex-grow border-t border-gray-300"></div>
       <span className="px-3 text-gray-400 text-sm">অথবা</span>
@@ -59,10 +59,10 @@ const SignUpPage = () => {
   </div>
 
   <div className="flex gap-2">
-      <button type="button" onClick={handleGoogleSignIn} className="btn flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
+      <button type="button" onClick={handleGoogleSignIn} className="btn btn-sm sm:btn-md flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
                 <FaGoogle className="shrink-0" /> Google দিয়ে চালিয়ে যান
             </button>
-            <button type="button" onClick={handleGithubSignIn} className="btn flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
+            <button type="button" onClick={handleGithubSignIn} className="btn btn-sm sm:btn-md flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
                 <IoLogoGithub className="shrink-0" /> GitHub দিয়ে চালিয়ে যান
             </button>
   </div>

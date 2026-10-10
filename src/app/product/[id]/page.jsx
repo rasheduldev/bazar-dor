@@ -11,7 +11,7 @@ const ProductDetailsPage = async({params}) => {
     const {id} = await params
     const product = await getSingleProducts(id)
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-2'>
             <ProductSummary product={product}></ProductSummary>
             <PriceSummary markets={product.markets} />
             

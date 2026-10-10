@@ -34,7 +34,7 @@ const Banner = () => {
             src={BannerImg}
             alt="banner image"
             priority
-            className="h-auto w-40 object-contain sm:w-48 md:w-90"
+            className="h-auto w-32 object-contain sm:w-48 md:w-80"
           />
         </div>
       </div>

@@ -15,7 +15,7 @@ export default async function Home() {
   .sort((a, b) => b.change.pct - a.change.pct).slice(0, 6);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-2">
       <Banner></Banner>
       <p className="my-4 font-bold text-xl text-[#1D271F]">
   <span className="text-red-500">▲</span> আজ দাম বেড়েছে

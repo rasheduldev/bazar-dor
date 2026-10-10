@@ -40,7 +40,7 @@ const SignInPage = () => {
             <h2 className="font-bold text-xl text-[#1D271F]">সাইন ইন</h2>
             <p className="text-sm mb-2 text-gray-500">বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।</p>
             <form onSubmit={onSubmit}>
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-md border p-4">
+              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-sm sm:max-w-md border p-4">
 
   <label className="label">ইমেইল</label>
   <input name="email" type="email" className="input w-full" placeholder="you@example.com" />
@@ -57,10 +57,10 @@ const SignInPage = () => {
   </div>
 
   <div className="flex gap-2">
-      <button type="button" onClick={handleGoogleSignIn} className="btn flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
+      <button type="button" onClick={handleGoogleSignIn} className="btn btn-sm sm:btn-md flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
           <FaGoogle className="shrink-0" /> Google দিয়ে চালিয়ে যান
       </button>
-      <button type="button" onClick={handleGithubSignIn} className="btn flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
+      <button type="button" onClick={handleGithubSignIn} className="btn btn-sm sm:btn-md flex-1 flex items-center justify-center gap-1.5 px-2 text-xs sm:text-sm whitespace-nowrap">
           <IoLogoGithub className="shrink-0" /> GitHub দিয়ে চালিয়ে যান
       </button>
   </div>

@@ -25,7 +25,7 @@ const ProfilePage = () => {
         <div className="container mx-auto flex flex-col justify-center items-center mt-5 space-y-4 max-w-2xl px-4">
             <div className="w-full text-start">
                 <h2 className="font-bold text-2xl text-[#1D271F]">আমার প্রোফাইল</h2>
-                <p className="text-sm text-gray-500">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
+                <p className="text-sm mt-1 text-gray-500">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
             </div>
 
             <div className="bg-base-200 border border-base-300 rounded-box w-full p-4 flex items-center justify-between shadow-sm">
