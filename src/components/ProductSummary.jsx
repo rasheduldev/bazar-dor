@@ -1,4 +1,3 @@
-import React from "react";
 
 const ProductSummary = ({ product }) => {
   const { nameBn, image, categoryNameBn, unit, today, yesterday, change } =

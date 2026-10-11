@@ -23,7 +23,7 @@ const Banner = () => {
           </p>
 
           <Link
-            href={"/"}
+            href="#সব-পণ্য"
             className="mt-5 inline-flex items-center justify-center rounded-md bg-[#05893E] px-4 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-[#047331]"
           >
             সব পণ্য দেখুন
@@ -31,6 +31,8 @@ const Banner = () => {
         </div>
         <div className="flex w-full justify-center sm:w-1/3 ">
           <Image
+          width={600}
+          height={500}
             src={BannerImg}
             alt="banner image"
             priority

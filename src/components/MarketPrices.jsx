@@ -1,5 +1,4 @@
 
-import React from "react";
 
 const MarketPrices = ({ markets = [] }) => {
   return (
@@ -10,7 +9,7 @@ const MarketPrices = ({ markets = [] }) => {
         </h2>
       </div>
 
-      {markets.length === 0 ? (
+      {markets?.length === 0 ? (
         <p className="py-8 text-center text-gray-500">
           বাজারের কোনো তথ্য পাওয়া যায়নি।
         </p>
@@ -43,7 +42,7 @@ const MarketPrices = ({ markets = [] }) => {
 
             <tbody>
               {markets.map((market, index) => {
-                const averagePrice = (market.min + market.max) / 2;
+                const averagePrice = (market?.min + market?.max) / 2;
 
                 return (
                   <tr
@@ -51,19 +50,19 @@ const MarketPrices = ({ markets = [] }) => {
                     className="border-t border-[#E1E9E1] transition hover:bg-[#F7FAF7]"
                   >
                     <td className="px-4 py-3 font-medium text-[#1D271F]">
-                      {market.market}
+                      {market?.market}
                     </td>
 
                     <td className="px-4 py-3 text-gray-600">
-                      {market.division}
+                      {market?.division}
                     </td>
 
                     <td className="px-4 py-3 text-right text-gray-700">
-                      {market.min.toLocaleString("bn-BD")} টাকা
+                      {market?.min.toLocaleString("bn-BD")} টাকা
                     </td>
 
                     <td className="px-4 py-3 text-right text-gray-700">
-                      {market.max.toLocaleString("bn-BD")} টাকা
+                      {market?.max.toLocaleString("bn-BD")} টাকা
                     </td>
 
                     <td className="px-4 py-3 text-right font-semibold text-[#1D271F]">

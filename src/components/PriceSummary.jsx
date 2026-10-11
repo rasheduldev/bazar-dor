@@ -35,16 +35,16 @@ const PriceSummary = ({ markets = [] }) => {
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {priceCards.map((card) => (
-          <div key={card.title} className="rounded-xl border border-[#E1E9E1] p-4">
-            <p className="text-sm text-gray-500">{card.title}</p>
+          <div key={card?.title} className="rounded-xl border border-[#E1E9E1] p-4">
+            <p className="text-sm text-gray-500">{card?.title}</p>
             <p className={`mt-2 text-2xl font-bold ${card.color}`}>
-              {card.price.toLocaleString("bn-BD", {
+              {card?.price.toLocaleString("bn-BD", {
                 maximumFractionDigits: 2,
               })}{" "}
               <span className="text-sm font-medium">টাকা</span>
             </p>
             <p className="mt-1 text-xs text-gray-500">
-              {card.description}
+              {card?.description}
             </p>
           </div>
         ))}

@@ -1,5 +1,6 @@
 import SortingCategoryProducts from '@/components/SortingCategoryProducts';
 import baseUrl from '@/services/baseUrl';
+import { notFound } from 'next/navigation';
 
 const getCategoryProducts = async (categorySlug) => {
 const res = await fetch(`${baseUrl}/products?category=${categorySlug}`);
@@ -8,17 +9,20 @@ return data;
 };
 const getCategories = async () => {
 const res = await fetch(`${baseUrl}/categories`);
-if (!res.ok) {
-    throw new Error("Failed to fetch categories");
-}
-return res.json();
+const data = await res.json()
+return data
 };
 
 const CategoryProducts = async ({ params }) => {
 const { categorySlug } = await params;
-const categoryProcucts = await getCategoryProducts(categorySlug);
 const categories = await getCategories();
 const currentCategory = categories.find(category => category.slug === categorySlug);
+const categoryProcucts = await getCategoryProducts(categorySlug);
+
+if (!currentCategory || categoryProcucts.length === 0) {
+    notFound();
+}
+
 return (
     <main className=" py-6">
         <div className="container mx-auto px-4">
@@ -31,7 +35,7 @@ return (
                         {currentCategory?.nameBn}
                     </h1>
                     <p className="mt-1 text-sm text-gray-500">
-                        {categoryProcucts.length}টি পণ্যের আজকের দাম ও পরিবর্তন
+                        {categoryProcucts?.length}টি পণ্যের আজকের দাম ও পরিবর্তন
                     </p>
                 </div>
             </div>
@@ -39,8 +43,6 @@ return (
         </div>
     </main>
 );
-
-
 };
 
 export default CategoryProducts;

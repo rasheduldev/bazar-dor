@@ -1,5 +1,4 @@
 "use client"
-
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,7 +44,7 @@ const ProfilePage = () => {
             <div className="bg-base-200 border border-base-300 rounded-box w-full p-4 flex items-center justify-between shadow-sm">
                 <div className="flex items-center gap-4">
                     {user?.image ? (
-                        <Image src={user.image} alt={user?.name} className="w-16 h-16 rounded-2xl object-cover" />
+                        <Image width={64} height={64} src={user.image} alt={user?.name} className="w-16 h-16 rounded-2xl object-cover" />
                     ) : (
                         <div className="w-16 h-16 rounded-2xl bg-[#05893E] text-white flex items-center justify-center font-bold text-2xl">
                             {user?.name?.charAt(0)}
