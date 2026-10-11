@@ -5,11 +5,21 @@ import baseUrl from '@/services/baseUrl';
 import { notFound } from 'next/navigation'; 
 import React from 'react';
 
-const getSingleProducts = async(id)=>{
+const getSingleProducts = async (id) => {
+  try {
     const res = await fetch(`${baseUrl}/products/${id}`);
+    if (!res.ok) {
+      return null;
+    }
     const data = await res.json();
+    if (data.error || !data.id || !data.nameBn) {
+      return null;
+    }
     return data;
-}
+  } catch (error) {
+    return null;
+  }
+};
 
 const ProductDetailsPage = async({params}) => {
     const {id} = await params
